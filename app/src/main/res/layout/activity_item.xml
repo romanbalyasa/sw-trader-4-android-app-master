@@ -1,0 +1,197 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sanwell.sw_4.controller.activities.ItemActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-5dp"
+        android:baselineAligned="false"
+        android:paddingTop="?attr/actionBarSize">
+
+        <FrameLayout
+            android:id="@+id/item_frame"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/hint_of_red">
+
+                <LinearLayout
+                    android:id="@+id/item_frame_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:background="@color/carmine_pink"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".08"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="Скл."
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".15"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="Дата прих."
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".25"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="Поставщик"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".19"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="Мин. запас е.и."
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".12"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="Остаток"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".12"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="Заказ"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <View
+                        android:layout_width="9dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/red_title"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/item_frame_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/item_frame_title"
+                    android:footerDividersEnabled="true"
+                    android:headerDividersEnabled="true"
+                    android:paddingTop="19dp" />
+
+                <TextView
+                    android:id="@+id/item_available_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/item_frame_list_view"
+                    android:paddingLeft="22dp"
+                    android:paddingTop="20dp" />
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <fragment
+            android:id="@+id/item_fragment_right"
+            android:name="com.sanwell.sw_4.controller.fragments.ItemFragment"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/concrete" />
+    </LinearLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/item_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/action_bar_background"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-3dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/item_toolbar_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:paddingRight="5dp"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/item_toolbar_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/item_toolbar_currency"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@id/item_toolbar_currency"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_toolbar_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/item_toolbar_price"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="-4dp"
+            android:paddingRight="5dp"
+            android:textColor="@color/red_title"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/item_toolbar_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/item_toolbar_count"
+            android:layout_marginRight="10dp"
+            android:paddingRight="5dp"
+            android:text="22 250.00 UAH (+21 716.00 UAH)"
+            android:textColor="@color/gray" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

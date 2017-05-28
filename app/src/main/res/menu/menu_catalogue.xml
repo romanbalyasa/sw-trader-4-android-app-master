@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sanwell="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sanwell.sw_4.controller.activities.CatalogueActivity">
+    <item
+        android:id="@+id/catalogue_menu_action_search"
+        android:icon="@drawable/search_icon"
+        android:title="@string/menu_action_search"
+        sanwell:showAsAction="always" />
+</menu>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sanwell.sw_4">
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:requiresSmallestWidthDp="600"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".model.SanwellApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:noHistory="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <activity
+            android:name=".controller.activities.SplashScreen"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".controller.activities.ClientsList"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".controller.activities.SettingsActivity"
+            android:label="@string/menu_action_settings"
+            android:parentActivityName=".controller.activities.ClientsList"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sanwell.sw_4.controller.activities.ClientsList" />
+        </activity>
+        <activity
+            android:name=".controller.activities.OrdersTotalListActivity"
+            android:label="@string/orders_menu_description"
+            android:parentActivityName=".controller.activities.ClientsList"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sanwell.sw_4.controller.activities.ClientsList" />
+        </activity>
+        <activity
+            android:name=".controller.activities.CatalogueActivity"
+            android:label="@string/title_activity_catalogue"
+            android:parentActivityName=".controller.activities.OrderListActivity"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sanwell.sw_4.controller.activities.OrderListActivity" />
+        </activity>
+        <activity
+            android:name=".controller.activities.ImagesActivity"
+            android:label="@string/title_activity_images"
+            android:parentActivityName=".controller.activities.ItemActivity"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sanwell.sw_4.controller.activities.ItemActivity" />
+        </activity>
+        <activity
+            android:name=".controller.activities.ItemActivity"
+            android:label="@string/title_activity_item"
+            android:parentActivityName=".controller.activities.CatalogueActivity"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sanwell.sw_4.controller.activities.CatalogueActivity" />
+        </activity>
+        <activity
+            android:name=".controller.activities.OrderListActivity"
+            android:label="@string/title_activity_order_list"
+            android:parentActivityName=".controller.activities.ClientsList"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sanwell.sw_4.controller.activities.ClientsList" />
+        </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="a48c731393ac70de078dd8d9127c9ebe9be49d5e" />
+    </application>
+
+</manifest>

@@ -1,0 +1,190 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/catalogue_activity_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sanwell.sw_4.controller.activities.CatalogueActivity">
+
+    <RelativeLayout
+        android:id="@+id/catalogue_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/edit_text_shadow"
+        android:visibility="invisible">
+
+        <ImageButton
+            android:id="@+id/catalogue_search_back_button"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:onClick="hideSearchBar"
+            android:paddingLeft="27dp"
+            android:src="@drawable/back_icon" />
+
+        <EditText
+            android:id="@+id/catalogue_search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/catalogue_search_back_button"
+            android:background="@null"
+            android:fontFamily="@string/font_regular"
+            android:hint="@string/catalogue_search_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingLeft="30dp"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/catalogue_search_cross"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:onClick="clearSearchBar"
+            android:src="@drawable/cross" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/catalogue_search_bar"
+        android:layout_marginTop="-5dp"
+        android:baselineAligned="false">
+
+        <fragment
+            android:id="@+id/catalogue_fragment"
+            android:name="com.sanwell.sw_4.controller.fragments.CatalogueFragment"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/white" />
+
+        <RelativeLayout
+            android:id="@+id/catalogue_frame"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:background="@color/hint_of_red">
+
+            <LinearLayout
+                android:id="@+id/catalogue_cost_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/catalogue_cost_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:paddingRight="17dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/catalogue_items_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/catalogue_cost_layout"
+                android:drawSelectorOnTop="true"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/catalogue_fish_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/catalogue_fish_image_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/catalog_illustation" />
+
+                <RelativeLayout
+                    android:id="@+id/catalogue_fish_layout_no_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:id="@+id/catalogue_fish_no_result_image_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/search_illustration" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/catalogue_fish_no_result_image_view"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:paddingTop="35dp"
+                        android:text="@string/no_result_caption"
+                        android:textColor="@color/no_result_caption" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/catalogue_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/action_bar_background"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <com.sanwell.sw_4.view.MenuSpinner
+        android:id="@+id/catalogue_menu_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="62dp"
+        android:background="@null"
+        android:popupBackground="@drawable/rounded_background" />
+
+    <RelativeLayout
+        android:id="@+id/catalogue_gray_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/gray_background"
+        android:visibility="invisible" />
+
+    <ListView
+        android:id="@+id/catalogue_suggestions_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/catalogue_search_bar"
+        android:layout_marginTop="-5dp"
+        android:background="@color/white"
+        android:divider="@null"
+        android:visibility="gone" />
+
+</RelativeLayout>

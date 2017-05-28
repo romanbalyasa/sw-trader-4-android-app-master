@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="SeekBarStyle" parent="android:Widget.Holo.Light.SeekBar">
+        <item name="android:progressDrawable">
+            @drawable/apptheme_scrubber_progress_horizontal_holo_light
+        </item>
+        <item name="android:indeterminateDrawable">
+            @drawable/apptheme_scrubber_progress_horizontal_holo_light
+        </item>
+        <item name="android:thumb">@drawable/thumb</item>
+    </style>
+
+    <style name="CommonAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#2C8BBE</item>
+        <item name="android:textColorPrimary">#000</item>
+        <item name="android:background">#ffff</item>
+    </style>
+
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/fragment_clients_list_client_debt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:fontFamily="@string/font_regular"
+        android:paddingTop="18dp"
+        android:text="@string/debt_title"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/fragment_clients_list_client_debt_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/fragment_clients_list_client_debt_title"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@string/font_regular"
+        android:textColor="@color/red_title"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/fragment_clients_list_client_debt_value_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/fragment_clients_list_client_debt_title_text_view"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/fragment_clients_list_client_debt_title_text_view"
+        android:fontFamily="@string/font_regular"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

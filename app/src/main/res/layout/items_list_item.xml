@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="96dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal">
+
+    <View
+        android:id="@+id/items_list_item_divider_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_alignParentTop="true"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:id="@+id/items_list_item_divider_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:id="@+id/items_list_item_divider_left"
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="?android:attr/listDivider" />
+
+
+    <ImageView
+        android:id="@+id/items_list_item_image_view"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/border"
+        android:scaleType="center"
+        android:src="@drawable/no_photo_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/items_list_item_image_view"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/items_list_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:ellipsize="end"
+                tools:text="КОТЕЛ ТВЕРДОТОПЛЕВНЫЙ ДТ"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="sans-serif"
+                android:paddingTop="5dp"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/items_list_item_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/items_list_item_title"
+                android:clickable="false"
+                android:ellipsize="end"
+                tools:text="КОТЕЛ ТВЕРДОТОПЛЕВНЫЙ ДТ"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="7dp"
+                android:singleLine="true"
+                android:textColor="@color/item_subtitle_black"
+                android:textSize="12.5sp"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0">
+
+            <RelativeLayout
+                android:id="@+id/items_list_cost_text_views_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/items_list_item_cost_text_view"
+                    android:layout_width="wrap_content"
+                    tools:text="15 000"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="sans-serif"
+                    android:paddingRight="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/items_list_item_currency_text_view"
+                    android:layout_width="wrap_content"
+                    tools:text="кг"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/items_list_item_cost_text_view"
+                    android:layout_toRightOf="@id/items_list_item_cost_text_view"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/black"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:id="@+id/items_list_item_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/items_list_item_currency_text_view"
+                    android:layout_below="@id/items_list_item_currency_text_view"
+                    android:layout_marginTop="5dp"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="sans-serif"
+                    android:singleLine="true"
+                    android:textColor="@color/red_item_count"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/items_list_item_plus_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/items_list_cost_text_views_layout"
+                android:background="@null"
+                android:paddingRight="18dp"
+                android:src="@drawable/plus_icon" />
+
+            <ImageButton
+                android:id="@+id/items_list_item_basket_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/items_list_cost_text_views_layout"
+                android:background="@null"
+                android:onClick="itemCartButton"
+                android:paddingRight="18dp"
+                android:src="@drawable/cart_icon"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/items_list_item_delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/items_list_cost_text_views_layout"
+                android:background="@null"
+                android:paddingRight="18dp"
+                android:src="@drawable/remove_icon"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

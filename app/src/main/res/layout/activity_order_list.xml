@@ -1,0 +1,359 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hint_of_red"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.sanwell.sw_4.controller.activities.OrderListActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/order_list_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/action_bar_background"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <RelativeLayout
+        android:id="@+id/order_list_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/edit_text_shadow"
+        android:visibility="invisible">
+
+        <ImageButton
+            android:id="@+id/order_list_search_back_button"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:onClick="hideSearchBar"
+            android:paddingLeft="27dp"
+            android:src="@drawable/back_icon" />
+
+        <com.sanwell.sw_4.view.CustomEditText
+            android:id="@+id/order_list_search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/order_list_search_back_button"
+            android:background="@null"
+            android:fontFamily="@string/font_regular"
+            android:hint="@string/order_list_search_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingLeft="30dp"
+            android:textSize="20sp"
+            android:typeface="serif" />
+
+        <ImageButton
+            android:id="@+id/order_list_search_cross"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:onClick="clearSearchBar"
+            android:src="@drawable/cross" />
+
+    </RelativeLayout>
+
+    <com.sanwell.sw_4.view.MenuSpinner
+        android:id="@+id/order_list_menu_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="62dp"
+        android:background="@null"
+        android:popupBackground="@drawable/rounded_background" />
+
+    <TextView
+        android:id="@+id/order_list_summary_info"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/order_list_menu_spinner"
+        android:layout_marginLeft="19dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/order_list_currency_info"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/order_list_menu_spinner"
+        android:layout_marginRight="19dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/order_list_comment_box"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/concrete" />
+
+        <ImageView
+            android:id="@+id/order_list_comment_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/edit_icon" />
+
+        <Button
+            android:id="@+id/order_list_comment_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            android:background="@android:color/transparent"
+            android:onClick="hideSoftKeyboard"
+            android:text="@string/done"
+            android:textColor="@color/red_item_count"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/order_list_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="17dp"
+            android:layout_toLeftOf="@id/order_list_comment_done"
+            android:background="@null"
+            android:hint="@string/order_comment"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:isScrollContainer="true"
+            android:minHeight="64dp" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/order_list_items_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/order_list_comment_box"
+        android:layout_below="@id/order_list_summary_info"
+        android:divider="@null"
+        android:drawSelectorOnTop="true" />
+
+    <ImageView
+        android:id="@+id/order_list_fish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/catalog_illustation"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/order_list_plus_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/order_list_comment_box"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="9dp"
+        android:layout_marginRight="129dp"
+        android:background="@drawable/action_button_selector"
+        android:onClick="addItem" />
+
+    <RelativeLayout
+        android:id="@+id/order_list_gray_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/gray_background"
+        android:visibility="invisible"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:id="@+id/order_list_suggestions_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_list_search_bar"
+        android:layout_marginTop="-5dp"
+        android:background="@color/white"
+        android:divider="@null"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/order_list_delete_order_box"
+        android:layout_width="330dp"
+        android:layout_height="160dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_background"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/delete_order_title"
+            android:textColor="@color/alert_title"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/order_list_alert_accept_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="30dp"
+            android:background="@null"
+            android:fontFamily="sans-serif"
+            android:onClick="deleteOrder"
+            android:text="@string/yes"
+            android:textColor="@color/button_title_color"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/order_list_alert_accept_button"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/order_list_alert_accept_button"
+            android:background="@null"
+            android:fontFamily="sans-serif"
+            android:onClick="cancelDeleting"
+            android:text="@string/alert_cancel"
+            android:textColor="@color/baltic_sea"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/order_list_delete_item_box"
+        android:layout_width="400dp"
+        android:layout_height="220dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_background"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/order_list_delete_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/delete_item_title"
+            android:textColor="@color/alert_title"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/order_list_delete_item_image"
+            android:layout_width="89dp"
+            android:layout_height="89dp"
+            android:layout_below="@id/order_list_delete_item_title"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/border"
+            android:scaleType="center"
+            android:src="@drawable/no_photo_icon" />
+
+        <TextView
+            android:id="@+id/order_list_delete_item_message"
+            android:layout_width="wrap_content"
+            android:layout_height="89dp"
+            android:layout_below="@id/order_list_delete_item_title"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@id/order_list_delete_item_image"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/order_list_alert_single_accept_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:fontFamily="sans-serif"
+            android:onClick="deleteItem"
+            android:text="@string/yes"
+            android:textColor="@color/button_title_color"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/order_list_alert_single_accept_button"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/order_list_alert_single_accept_button"
+            android:background="@null"
+            android:fontFamily="sans-serif"
+            android:onClick="cancelDeleting"
+            android:text="@string/alert_cancel"
+            android:textColor="@color/baltic_sea"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/order_list_not_found_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:isScrollContainer="false"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/order_list_no_result_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/search_illustration" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/order_list_no_result_image_view"
+                android:layout_centerHorizontal="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:paddingTop="35dp"
+                android:text="@string/no_result_caption"
+                android:textColor="@color/no_result_caption" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="font_regular">sans-serif</string>
+    <string name="font_medium">sans-serif-medium</string>
+    <string name="font_light">sans-serif-light</string>
+
+    <string name="app_name">SW-Торговля 4</string>
+    <string name="menu_action_settings">Настройки</string>
+    <string name="title_activity_catalogue">Каталог</string>
+    <string name="menu_action_search">Поиск</string>
+    <string name="title_activity_item">Товар</string>
+    <string name="upload_menu_description">Выгрузить</string>
+    <string name="orders_menu_description">Отчет по заказам</string>
+    <string name="refresh_menu_description">Обновить</string>
+    <string name="delete_menu_description">Удалить заказ</string>
+    <string name="title_activity_order_list">Заказ</string>
+    <string name="title_activity_images">Изображения</string>
+    <string name="catalogue_search_hint">Поиск по каталогу</string>
+    <string name="clients_list_search_hint">Поиск по клиентам</string>
+    <string name="no_result_caption">ПО ВАШЕМУ ЗАПРОСУ НИЧЕГО НЕ НАЙДЕНО</string>
+    <string name="device_number">Номер устройства</string>
+    <string name="device_email">Email для выгрузки</string>
+    <string name="refresh_db">ОБНОВИТЬ БАЗУ ДАННЫХ</string>
+    <string name="load_images">ЗАГРУЗИТЬ ИЗОБРАЖЕНИЯ</string>
+    <string name="eur">EUR</string>
+    <string name="rub">RUB</string>
+    <string name="usd">USD</string>
+    <string name="uah">UAH</string>
+    <string name="debt_title">Баланс:</string>
+    <string name="debt">Долг</string>
+    <string name="open_order">Открыть заказ</string>
+    <string name="payment_history">График платежей</string>
+    <string name="db_refresh_title">Обновление базы данных</string>
+    <string name="cancel">ОТМЕНИТЬ</string>
+    <string name="delete_order_title">Удалить заказ?</string>
+    <string name="yes">Да</string>
+    <string name="alert_cancel">ОТМЕНА</string>
+    <string name="order_comment">Комментарий к заказу</string>
+    <string name="delete_item_title">Удалить товар?</string>
+    <string name="upload_orders_title">Выгрузить заказы?</string>
+    <string name="upload_order_message">После выгрузки открытые заказы изменить больше нельзя.</string>
+    <string name="count">Количество</string>
+    <string name="apply">ПРИМЕНИТЬ</string>
+    <string name="order_list_search_hint">Поиск по заказу</string>
+    <string name="countHint">Кол-во</string>
+    <string name="refresh_db_title">Обновить базу данных?</string>
+    <string name="refresh_db_message">Это займет некоторое время</string>
+    <string name="email_hint">Укажите e-mail</string>
+    <string name="device_number_hint">Введите номер устройства</string>
+    <string name="app_version_titile">Версия приложения</string>
+    <string name="sanwell">SANWELL</string>
+    <string name="done">ГОТОВО</string>
+    <string name="clients_currency_title">Валюта к оплате</string>
+    <string name="empty_group_title">%1$s (пусто)</string>
+    <string name="empty_word">Пустой</string>
+    <string name="all_goods">Все товары</string>
+    <string name="search_results">Результаты поиска</string>
+    <string name="goods_plan_percentage">План продаж - %1$s%%</string>
+    <string name="goods_plan_title">План продаж</string>
+    <string name="catalogue">Каталог</string>
+    <string name="recommended_goods">Рекомендованные товары</string>
+    <string name="db_up_to_date">База данных: актуальна</string>
+    <string name="db_old">База данных устарела</string>
+    <string name="available_short_string">Доступно: %1$s</string>
+    <string name="available_string"><b>Доступно: %1$s %2$s (упаковка %3$s)</b></string>
+    <string name="pick_filial">Выберите филиал</string>
+    <string name="downloaded_prefix">Загружено: </string>
+    <string name="minus_one">-1</string>
+    <string name="plus_one">+1</string>
+    <string name="item_discount_prefix">Скидка: %1$s</string>
+    <string name="item_price_type_prefix">Тип цены: %1$s</string>
+    <string name="one">1</string>
+    <string name="uploaded_order_date">Заказ выг. %1$s</string>
+    <string name="not_uploaded_order_date">Заказ не выг. %1$s</string>
+    <string name="opened_in">Заказ открыт в %1$s</string>
+    <string name="min_order">Мин. заказ: %1$s</string>
+    <string name="client_title">Клиент</string>
+    <string name="htitle_date">ДАТА</string>
+    <string name="htitle_client">КЛИЕНТ</string>
+    <string name="htitle_sum">СУММА</string>
+    <string name="htitle_currency">ВАЛЮТА</string>
+    <string name="htitle_status">СТАТУС</string>
+    <string name="order_list_order_head_lines">СТРОКИ:</string>
+    <string name="title_description">ПРИМЕЧАНИЕ</string>
+    <string name="all_clients">ВСЕ</string>
+
+    <plurals name="position_plurals">
+        <item quantity="zero">позиций</item>
+        <item quantity="one">позиция</item>
+        <item quantity="two">позиции</item>
+        <item quantity="few">позиции</item>
+        <item quantity="many">позиций</item>
+        <item quantity="other">позиций</item>
+    </plurals>
+    <plurals name="units_plurals">
+        <item quantity="zero">едениц</item>
+        <item quantity="one">единица</item>
+        <item quantity="two">единицы</item>
+        <item quantity="few">единиц</item>
+        <item quantity="many">единиц</item>
+        <item quantity="other">единиц</item>
+    </plurals>
+
+</resources>

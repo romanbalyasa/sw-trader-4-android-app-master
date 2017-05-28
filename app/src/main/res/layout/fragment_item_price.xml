@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/concrete"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/fragment_item_currency"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/hint_of_red"
+        android:fontFamily="@string/font_regular"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_item_image_block"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/very_light_gray">
+
+        <TextView
+            android:id="@+id/fragment_item_image_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:paddingLeft="40dp"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/fragment_item_image_button"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:onClick="itemButton"
+            android:scaleType="center" />
+
+    </RelativeLayout>
+
+    <!--110dp-->
+    <RelativeLayout
+        android:id="@+id/fragment_item_info_block"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_above="@id/fragment_item_image_block"
+        android:background="@color/zircon">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/fragment_item_info_goal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@string/font_regular"
+                android:paddingLeft="19dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/fragment_item_info_sold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/fragment_item_info_goal"
+                android:fontFamily="@string/font_regular"
+                android:paddingLeft="19dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/fragment_item_info_planned"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/fragment_item_info_sold"
+                android:fontFamily="@string/font_regular"
+                android:paddingLeft="19dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_item_default_block"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/fragment_item_info_block"
+        android:layout_below="@id/fragment_item_currency"
+        android:visibility="visible"
+        tools:visibility="gone">
+
+        <TextView
+            android:id="@+id/fragment_item_default_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@string/font_regular"
+            android:textColor="@color/red_title"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fragment_item_default_cost_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/fragment_item_default_cost"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/fragment_item_default_cost"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <com.sanwell.sw_4.view.ComboSeekBar
+            android:id="@+id/fragment_item_default_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_below="@id/fragment_item_default_cost"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="21dp"
+            android:clickable="false" />
+
+        <TextView
+            android:id="@+id/fragment_item_default_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/fragment_item_default_seek_bar"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="17dp"
+            android:fontFamily="@string/font_regular"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fragment_item_default_price_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/fragment_item_default_seek_bar"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="17dp"
+            android:fontFamily="@string/font_regular"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@id/fragment_item_default_discount"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/fragment_item_default_move_backward"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/np_red_button_selector"
+                android:src="@drawable/arrow_backward" />
+
+            <ImageButton
+                android:id="@+id/fragment_item_default_move_forward"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/np_red_button_selector"
+                android:src="@drawable/arrow_forward" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/fragment_item_cost_block"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/fragment_item_info_block"
+        android:layout_below="@id/fragment_item_currency"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/fragment_item_cost_apply_button"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/np_red_button_selector"
+                android:text="@string/apply"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/fragment_item_cost_count"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_alignBottom="@id/fragment_item_cost_apply_button"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="5dp"
+                android:inputType="numberDecimal"
+                android:text="@string/one"
+                android:textColor="@color/dark_gray"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/fragment_item_cost_count_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fragment_item_cost_count"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="22dp"
+                android:text="@string/count"
+                android:textSize="13sp" />
+
+            <SeekBar
+                android:id="@+id/fragment_item_cost_seek_bar"
+                style="@style/SeekBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_item_cost_apply_button"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="35dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp" />
+
+            <Button
+                android:id="@+id/fragment_item_cost_seek_bar_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/fragment_item_cost_seek_bar"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:gravity="center_vertical|left"
+                android:text="@string/minus_one"
+                android:textColor="@color/red_title"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/fragment_item_cost_seek_bar_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/fragment_item_cost_seek_bar"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:gravity="center_vertical|right"
+                android:text="@string/plus_one"
+                android:textColor="@color/red_title"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/min_order_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_item_cost_seek_bar_min"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="25dp"
+                android:background="#E9E9E9"
+                android:fontFamily="@string/font_regular"
+                android:gravity="center"
+                android:padding="30dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/min_order"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/order_list_start_margin"
+    android:paddingRight="@dimen/order_list_start_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bordered_head_bg"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.11"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:text="@string/htitle_date"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.48"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:text="@string/htitle_client"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.12"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:text="@string/htitle_sum"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.12"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:text="@string/htitle_currency"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.15"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:text="@string/htitle_status"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bordered_body_db"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/date_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.11"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:text="@string/htitle_date" />
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.48"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:text="@string/htitle_client" />
+
+        <TextView
+            android:id="@+id/cost_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.12"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:text="@string/htitle_sum" />
+
+        <TextView
+            android:id="@+id/currency_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.12"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:text="@string/htitle_currency" />
+
+        <TextView
+            android:id="@+id/status_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_list_header_title_margin"
+            android:layout_marginTop="@dimen/order_list_header_title_margin"
+            android:layout_weight="0.15"
+            android:fontFamily="@string/font_regular"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:text="@string/htitle_status" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bordered_head_bg"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/order_list_header_title_margin"
+        android:paddingLeft="27.5dp"
+        android:paddingTop="@dimen/order_list_header_title_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@string/font_regular"
+            android:text="@string/order_list_order_head_lines"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lines_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@string/font_regular"
+            android:text="@string/order_list_order_head_lines"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            tools:text="10/10" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

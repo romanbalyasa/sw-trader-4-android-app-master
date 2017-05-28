@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/concrete">
+
+    <LinearLayout
+        android:id="@+id/fragment_clients_list_order_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/very_light_gray"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:paddingLeft="21dp"
+            android:singleLine="true"
+            android:text="@string/clients_currency_title"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.sanwell.sw_4.view.CurrencySpinner
+            android:id="@+id/fragment_clients_list_order_currency_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/very_light_gray"
+            android:popupBackground="@drawable/rounded_background" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_clients_list_root_order_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/fragment_clients_list_order_currency">
+
+        <RelativeLayout
+            android:id="@+id/fragment_clients_list_open_order_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@color/zircon">
+
+            <TextView
+                android:id="@+id/fragment_clients_list_open_order_info_date_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="18dp"
+                android:paddingTop="13dp"
+                android:text="Заказ открыт в 11:01"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/fragment_clients_list_open_order_info_bill_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/fragment_clients_list_open_order_info_date_text_view"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="18dp"
+                android:paddingTop="7dp"
+                android:textColor="@color/red_title"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/fragment_clients_list_open_order_info_count_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_clients_list_open_order_info_date_text_view"
+                android:layout_toRightOf="@id/fragment_clients_list_open_order_info_bill_text_view"
+                android:fontFamily="sans-serif"
+                android:paddingTop="7dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/fragment_clients_list_open_order_info_reject_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/fragment_clients_list_open_order_info_bill_text_view"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="18dp"
+                android:paddingTop="7dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/comment_icon_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:paddingTop="17dp"
+                android:src="@drawable/comment_icon" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_clients_list_order_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@color/zircon"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/fragment_clients_list_order_info_open_order_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="19dp"
+                android:text="@string/open_order"
+                android:textColor="@color/black" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="22dp"
+                android:background="@null"
+                android:onClick="orderButtonAction"
+                android:src="@drawable/add_order_button_selector" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.baoyz.swipemenulistview.SwipeMenuListView
+        android:id="@+id/fragment_clients_list_order_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/fragment_clients_list_root_order_info_layout"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent" />
+
+</RelativeLayout>

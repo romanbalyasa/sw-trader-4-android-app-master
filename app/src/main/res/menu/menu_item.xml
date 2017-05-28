@@ -1,0 +1,50 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sanwell="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sanwell.sw_4.controller.activities.ItemActivity">
+
+    <group>
+        <item
+            android:enabled="false"
+            android:orderInCategory="100"
+            android:title="     "
+            sanwell:showAsAction="always" />
+        <item
+            android:actionViewClass="android.widget.SearchView"
+            android:enabled="false"
+            android:orderInCategory="100"
+            android:title="     "
+            sanwell:showAsAction="always" />
+        <item
+            android:actionViewClass="android.widget.SearchView"
+            android:enabled="false"
+            android:orderInCategory="100"
+            android:title="     "
+            sanwell:showAsAction="always" />
+        <item
+            android:actionViewClass="android.widget.SearchView"
+            android:enabled="false"
+            android:orderInCategory="100"
+            android:title="     "
+            sanwell:showAsAction="always" />
+        <item
+            android:actionViewClass="android.widget.SearchView"
+            android:enabled="false"
+            android:orderInCategory="100"
+            android:title="     "
+            sanwell:showAsAction="always" />
+        <item
+            android:actionViewClass="android.widget.SearchView"
+            android:enabled="false"
+            android:orderInCategory="100"
+            android:title="     "
+            sanwell:showAsAction="always" />
+        <item
+            android:actionViewClass="android.widget.SearchView"
+            android:enabled="false"
+            android:orderInCategory="100"
+            android:title="     "
+            sanwell:showAsAction="always" />
+    </group>
+
+</menu>

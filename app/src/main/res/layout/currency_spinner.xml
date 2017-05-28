@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="43dp">
+
+    <RelativeLayout
+        android:id="@+id/currency_spinner_subtitle_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/currency_spinner_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="10dp"
+            android:src="@drawable/triangle_icon" />
+
+        <TextView
+            android:id="@+id/currency_spinner_subtitle_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/currency_spinner_icon"
+            android:fontFamily="sans-serif"
+            android:paddingRight="3dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/currency_spinner_single_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:fontFamily="sans-serif"
+        android:paddingLeft="20dp"
+        android:paddingRight="21dp"
+        android:paddingTop="15dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="21.5sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

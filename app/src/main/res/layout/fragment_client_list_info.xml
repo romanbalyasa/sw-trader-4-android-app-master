@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_clients_list_no_selected_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/concrete">
+
+    <TextView
+        android:id="@+id/fragment_clients_list_dollar_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/fragment_clients_list_rub_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/fragment_clients_list_dollar_text_view"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/fragment_clients_list_eu_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/fragment_clients_list_rub_text_view"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/fragment_clients_list_db_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/fragment_clients_list_eu_text_view"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/fragment_clients_list_db_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/fragment_clients_list_db_title"
+        android:layout_marginLeft="26dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/client_list_subtitle"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/fragment_clients_list_refresh_db_button"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/fragment_clients_list_db_subtitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/np_red_button_selector"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:onClick="refreshDBButtonAction"
+        android:paddingLeft="25dp"
+        android:text="@string/refresh_db"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/fragment_clients_list_refresh_db_button_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@id/fragment_clients_list_db_subtitle"
+        android:layout_marginRight="-45dp"
+        android:layout_marginTop="55dp"
+        android:layout_toLeftOf="@id/fragment_clients_list_refresh_db_button"
+        android:elevation="100dp"
+        android:src="@drawable/refresh_icon_white" />
+
+</RelativeLayout>
+

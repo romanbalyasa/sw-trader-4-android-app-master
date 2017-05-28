@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sanwell="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ClientsList">
+    <item
+        android:id="@+id/action_orders"
+        android:icon="@drawable/content_management"
+        android:title="@string/orders_menu_description"
+        sanwell:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_upload"
+        android:icon="@drawable/upload_icon"
+        android:title="@string/upload_menu_description"
+        sanwell:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/refresh_icon_black"
+        android:title="@string/refresh_menu_description"
+        sanwell:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/search_icon"
+        android:title="@string/menu_action_search"
+        sanwell:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/menu_action_settings"
+        sanwell:showAsAction="never" />
+</menu>
